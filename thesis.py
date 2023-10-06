@@ -8,8 +8,7 @@ from print_functions import print_process
 from sklearn.cluster import AgglomerativeClustering
 from data_gather import fetch_dataset_from_twitter
 
-
-dataset = pd.read_csv('preprocessed.csv')
+dataset = pd.read_csv('dataset.csv')
 
 
 cluster_model, corpus, X, tfidf, best_k = cluster(dataset, best_k =1)
