@@ -12,3 +12,5 @@
 
 ## Installing Dependencies
 - dependencies/packages may not exists in the user's python environment. Hence, the user should install the packages stated in the error when running the command 'python3 thesis.py' (MacOS) or 'python thesis.py' (Windows)
+
+- python3 -m pip install tweet-preprocessor snscrape contractions lingua-language-detector langdetect advertools wordcloud vaderSentiment langdetect numpy advertools contractions nltk scikit-learn snscrape  

@@ -8,6 +8,8 @@ from print_functions import print_process
 from sklearn.cluster import AgglomerativeClustering
 from data_gather import fetch_dataset_from_twitter
 
+# tweets = fetch_dataset_from_twitter()
+# dataset = preprocess_dataset(tweets)
 dataset = pd.read_csv('dataset.csv')
 
 
