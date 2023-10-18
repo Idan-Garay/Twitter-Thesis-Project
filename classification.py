@@ -1,7 +1,12 @@
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import pandas as pd
-import numpy as np
-from sklearn.model_selection import KFold
+
+def annotate_corpus_for_sentiments(dataset):
+    dataset = dataset.dropna(subset=['Clean']) # drop rows with empty 'Clean' column
+    dataset.reset_index(drop=True)
+    dataset['sentiment'] = dataset['Clean'].apply(lambda text: annotate_tweet(text)) # errors due to empty 'Clean' column
+    return dataset
+
 
 def annotate_tweet(tweet):
     analyzer = SentimentIntensityAnalyzer()

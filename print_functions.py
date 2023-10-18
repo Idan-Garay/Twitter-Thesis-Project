@@ -8,8 +8,7 @@ def print_process(model, df, corpus_embeddings, tfidf):
   # Create a dictionary to store the words in each cluster
   clusters = {i: [] for i in range(model.n_clusters)}
 
-  print(len(cluster_labels))
-  print('labels')
+  print('')
   # Iterate over the data and the cluster labels
   for i, label in enumerate(cluster_labels):
       # Split the text into words

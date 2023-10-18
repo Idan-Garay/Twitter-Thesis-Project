@@ -28,7 +28,7 @@ def cluster(dataset, best_k = 1):
     tfidf.fit(corpus)
     textMatrix = tfidf.transform(corpus)
 
-    print(corpus.size)
+    print("Preprocessed Dataset size: {}".format(corpus.size))
 
     X = textMatrix.toarray()
     
@@ -77,7 +77,8 @@ def cluster(dataset, best_k = 1):
     final_model = AgglomerativeClustering(n_clusters=best_k)
     final_model.fit(X)
 
-    print(final_model.n_clusters_)
+    print("Final Agglomerative Model's Clusters: {}".format(final_model.n_clusters_))
+    print()
     table_x = pd.DataFrame({
         'number_of_clusters': num_clusters,
         'silhouette_score': scores
