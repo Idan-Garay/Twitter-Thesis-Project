@@ -8,9 +8,9 @@ from nltk.stem import WordNetLemmatizer
 
 # pd.set_option('display.max_colwidth', None)
 lemmatizer = WordNetLemmatizer()
-# nltk.download('wordnet')
-# nltk.download('punkt')
-# nltk.download('omw-1.4')
+nltk.download('wordnet')
+nltk.download('punkt')
+nltk.download('omw-1.4')
 
 def replaceProcess(text):
   specialSymbols = ['.', '?', ',', '%', '!', ';', '|', '$', '&amp', '-', '#', '*', '_', ':', '(', ')', '*', '"', '/']
@@ -42,6 +42,9 @@ def preprocess_dataset(dataset):
   tagalog_stopwords.add('yesterday')
   contractions.add('youre', 'you are')
   
+
+  if (dataset['Clean'].empty == False):
+    return dataset
 
   # Remove Rows with NaN value in Clean column
   dataset.dropna(subset=['Text'], inplace=True)
